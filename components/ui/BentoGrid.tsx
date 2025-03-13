@@ -2,7 +2,12 @@
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import { GlobeDemo } from "./GridGlobe";
-import Lottie from "react-lottie";
+
+import dynamic from "next/dynamic";
+
+// Dynamically import react-lottie with ssr: false to prevent it from running server-side
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
+
 import { useState } from "react";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";

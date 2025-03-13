@@ -37,10 +37,12 @@ export const TextGenerateEffect = ({
           return (
             <motion.span
               key={word + idx}
-              className={`${idx > 3  ? 'text-purple' : "dark:text-white text-black"} opacity-0`}
-              style={{
-                filter: filter ? "blur(10px)" : "none",
-              }}
+              className={`${
+                idx > 3 ? "text-purple" : "dark:text-white text-black"
+              } opacity-0`}
+              initial={{ filter: "blur(10px)", opacity: 0 }}
+              animate={{ filter: "blur(0px)", opacity: 1 }}
+              transition={{ duration: duration || 1, delay: idx * 0.2 }}
             >
               {word}{" "}
             </motion.span>
