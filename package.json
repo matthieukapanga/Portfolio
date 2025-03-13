@@ -1,15 +1,18 @@
 {
+  "homepage": "https://matthieukapanga.github.io/Portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@react-three/drei": "^10.0.4",
-    "@react-three/fiber": "^9.0.4",
+    "@react-three/fiber": "9.1.0",
     "@sentry/nextjs": "^9.5.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.10",
